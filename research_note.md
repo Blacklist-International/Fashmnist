@@ -12,6 +12,7 @@ Fashion MNIST Dataset Tryout Project : Machine Learning Ops
 ### Research Tech Stack
 * Python
 * Tensorflow
+* Third Party : DVC
 
 ### Dataset
 * Tensorflow Fashion MNIST Built-in Dataset

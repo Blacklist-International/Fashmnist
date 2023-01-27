@@ -1,5 +1,7 @@
+!wget "https://raw.githubusercontent.com/Primezane/Pyper/main/History.py"
 import tensorflow as tf
 from tensorflow.keras.datasets import fashion_mnist
+from History import History
 
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
@@ -25,5 +27,9 @@ history = model.fit(
     epochs=5, verbose=2
 )
 
+train_loss, train_acc = model.evaluate(train_images, train_labels)
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+
 with open("metrics.txt", 'w') as outfile:
-        outfile.write("Training Accuracy: %2.1f%%\n" % model.evaluate(train_images, train_labels, verbose=0)[-1])
+        outfile.write(f"Train Loss : {train_loss:.3f}")
+        outfile.write(f"Train Accuracy : {train_acc:.3f}")

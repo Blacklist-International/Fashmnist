@@ -32,6 +32,12 @@ history = model.fit(
 train_loss, train_acc = model.evaluate(train_images, train_labels)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
+model_plot = History(history)
+
+model_plot.acc_plot(savefig=True)
+model_plot.loss_plot(savefig=True)
+
 with open("metrics.txt", 'w') as outfile:
-        outfile.write(f"Train Loss : {train_loss:.3f}")
-        outfile.write(f"Train Accuracy : {train_acc:.3f}")
+        outfile.write(f"Train Loss : {train_loss:.3f}\n")
+        outfile.write(f"Train Accuracy : {train_acc:.3f}\n")
+        outfile.write("#")

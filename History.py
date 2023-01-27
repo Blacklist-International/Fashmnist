@@ -21,7 +21,7 @@ class History:
         self.val_accuracy = history.history['val_accuracy']
         self.val_loss = history.history['val_loss']
 
-    def acc_plot(self):
+    def acc_plot(self, savefig=False):
         plt.plot(self.epoch, self.accuracy, marker='x', label='Training Accuracy')
         plt.plot(self.epoch, self.val_accuracy, marker='x', label='Validation Accuracy')
         plt.title("Train and Validation Accuracy")
@@ -29,9 +29,11 @@ class History:
         plt.ylabel("Score")
         plt.xticks([*range(len(self.epoch))])
         plt.legend()
+        if savefig:
+            fig.savefig("accuracy.png")
         plt.show()
 
-    def loss_plot(self):
+    def loss_plot(self, savefig=False):
         plt.plot(self.epoch, self.loss, marker='x', label='Training Loss')
         plt.plot(self.epoch, self.val_loss, marker='x', label='Validation Loss')
         plt.title("Train and Validation Loss")
@@ -39,4 +41,6 @@ class History:
         plt.ylabel("Score")
         plt.xticks([*range(len(self.epoch))])
         plt.legend()
+        if savefig:
+            fig.savefig("loss.png")
         plt.show()

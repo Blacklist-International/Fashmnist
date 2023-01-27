@@ -14,11 +14,11 @@ jobs:
           pip install -r requirements.txt
           python model.py
           
-          echo "## Model metrics" > report.md
+          echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
           
-          # echo "## Data viz" >> report.md
-          # cml-publish feature_importance.png --md >> report.md
-          # cml-publish residuals.png --md >> report.md
+          echo "## Model Performance" >> report.md
+          cml-publish accuracy.png --md >> report.md
+          cml-publish loss.png --md >> report.md
           
           cml-send-comment report.md

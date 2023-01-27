@@ -22,11 +22,12 @@ class History:
         self.val_loss = history.history['val_loss']
 
     def acc_plot(self, savefig=False):
-        plt.plot(self.epoch, self.accuracy, marker='x', label='Training Accuracy')
-        plt.plot(self.epoch, self.val_accuracy, marker='x', label='Validation Accuracy')
-        plt.title("Train and Validation Accuracy")
-        plt.xlabel("Epoch")
-        plt.ylabel("Score")
+        fig, ax = plt.subplots()
+        ax.plot(self.epoch, self.accuracy, marker='x', label='Training Accuracy')
+        ax.plot(self.epoch, self.val_accuracy, marker='x', label='Validation Accuracy')
+        ax.set_title("Train and Validation Accuracy")
+        ax.set_xlabel("Epoch")
+        ax.set_ylabel("Score")
         plt.xticks([*range(len(self.epoch))])
         plt.legend()
         if savefig:
@@ -34,11 +35,12 @@ class History:
         plt.show()
 
     def loss_plot(self, savefig=False):
-        plt.plot(self.epoch, self.loss, marker='x', label='Training Loss')
-        plt.plot(self.epoch, self.val_loss, marker='x', label='Validation Loss')
-        plt.title("Train and Validation Loss")
-        plt.xlabel("Epoch")
-        plt.ylabel("Score")
+        fig, ax = plt.subplots()
+        ax.plot(self.epoch, self.loss, marker='x', label='Training Loss')
+        ax.plot(self.epoch, self.val_loss, marker='x', label='Validation Loss')
+        ax.set_title("Train and Validation Loss")
+        ax.set_xlabel("Epoch")
+        ax.set_ylabel("Score")
         plt.xticks([*range(len(self.epoch))])
         plt.legend()
         if savefig:

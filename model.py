@@ -1,4 +1,6 @@
-!wget "https://raw.githubusercontent.com/Primezane/Pyper/main/History.py"
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 import tensorflow as tf
 from tensorflow.keras.datasets import fashion_mnist
 from History import History

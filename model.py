@@ -24,4 +24,6 @@ history = model.fit(
     validation_data=(test_images, test_labels), 
     epochs=5, verbose=2
 )
-     
+
+with open("metrics.txt", 'w') as outfile:
+        outfile.write("Training Accuracy: %2.1f%%\n" % model.evaluate(train_images, train_labels, verbose=0)[-1])

@@ -40,4 +40,6 @@ model_plot.loss_plot(savefig=True)
 with open("metrics.txt", 'w') as outfile:
         outfile.write(f"Train Loss : {train_loss:.3f}\n")
         outfile.write(f"Train Accuracy : {train_acc:.3f}\n")
+        outfile.write(f"Test Loss : {test_loss:.3f}\n")
+        outfile.write(f"Test Accuracy : {test_acc:.3f}\n")
         outfile.write("#")
